@@ -1,11 +1,11 @@
 use <module.scad>
 
-body_height = 15;
-body_width = 30;
+body_height = 17;
+body_width = 32;
 body_length = 25;
 prug_height = 2;
-prug_width = 25;
-thin = 1;
+prug_width = 24;
+thin = 3;
 body_round = 2;
 margin_cut = 3;
 margin_fitting = 5;
@@ -21,7 +21,7 @@ module body_fitting(){
 
 module body_prug(){
     difference() {
-        translate([body_width / 2 , 0, body_height * 2 / 9])
+        translate([body_width / 2 , 0, body_height * 3 / 9])
         color([1,0,0]) cube([prug_width, thin * 2, prug_height], center = true);
 //        color([1,0,0]) cube([10, 10, 10], center = true);
     }

@@ -1,19 +1,20 @@
 use <module.scad>
 
-cap_height = 15;
-cap_width = 30;
+cap_height = 17;
+cap_width = 32;
 cap_length = 25;
 prug_height = 2.7;
 prug_width = 8;
-thin = 1;
+thin = 3;
 cap_round = 2;
 margin_cut = 3;
 margin_fitting = 5;
+margin_thin = 0.2;
 
 module cap_fitting(){
     difference() {
-        translate([thin / 2, cap_length - margin_fitting, thin / 2])
-        cube([cap_width - thin, margin_fitting, cap_height - thin]);
+        translate([(thin / 2) - margin_thin, cap_length - margin_fitting, (thin / 2) - margin_thin])
+        cube([cap_width - thin + margin_thin * 2, margin_fitting, cap_height - thin + margin_thin * 2]);
         translate([thin, cap_length - margin_fitting, thin])
         cube([cap_width - thin * 2, margin_fitting, cap_height - thin * 2]);
     }
