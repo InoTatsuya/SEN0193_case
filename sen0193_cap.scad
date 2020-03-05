@@ -9,7 +9,7 @@ thin = 3;
 cap_round = 2;
 margin_cut = 3;
 margin_fitting = 5;
-margin_thin = 0.2;
+margin_thin = 0.0;
 
 module cap_fitting(){
     difference() {

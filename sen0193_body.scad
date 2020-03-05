@@ -9,13 +9,14 @@ thin = 3;
 body_round = 2;
 margin_cut = 3;
 margin_fitting = 5;
+margin_thin =  0.0;
 
 module body_fitting(){
     difference() {
         translate([0, body_length - margin_fitting, 0])
         cube([body_width, margin_fitting, body_height]);
-        translate([thin / 2, body_length - margin_fitting, thin / 2])
-        cube([body_width - thin, margin_fitting, body_height - thin]);
+        translate([(thin / 2) + margin_thin, body_length - margin_fitting, (thin / 2) + margin_thin])
+        cube([body_width - thin - margin_thin * 2, margin_fitting, body_height - thin - margin_thin * 2]);
     }
 }
 
